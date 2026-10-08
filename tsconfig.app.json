@@ -1,0 +1,23 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "types": ["vite/client"],
+    "allowArbitraryExtensions": true,
+
+    /* 允许 import .js 文件（utils/request.js、apis/allmsg.js），
+       但不对它们做类型检查，避免写 JS 时被 TS 报错打断 */
+    "allowJs": true,
+    "checkJs": false,
+
+    /* Linting */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.js"]
+}
